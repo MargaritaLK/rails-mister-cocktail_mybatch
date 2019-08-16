@@ -1,24 +1,33 @@
 
 <div class="container">
 
-  <h2> <%= @cocktail.name %></h2>
+  <h2 class="text_main"> <%= @cocktail.name.upcase %></h2>
 
-  <h3> Whats in the cocktail? </h3>
+  <h5> What's in it? </h5>
 
-  <%@doses.each do |d| %>
+  <% if @doses.count == 0 %>
+    <div>
+      <i class="fas fa-wine-bottle white-icon">
+      </i><%= "nothing jet...pretty hard to get drunk " %>
+    </div>
+    <% else %>
+      <%@doses.each do |d| %>
 
-    <h4><%= d.ingredient.name %></h4>
-    <p><%= d.description %></p>
+        <h4><%= d.ingredient.name %></h4>
+        <p><%= d.description %></p>
 
-    <%= link_to cocktail_dose_path(d),
-    method: :delete, data: { confirm: "Are you sure?" } do %>
-      <div class="btn btn-warning">remove ingredient</div>
-    <% end %>
+        <%= link_to cocktail_dose_path(d),
+        method: :delete, data: { confirm: "Are you sure?" } do %>
+          <div class="btn btn-warning">remove ingredient</div>
+         <% end %>
 
+      <% end %>
   <% end %>
 
+
+
   <%= link_to new_cocktail_dose_path(@cocktail) do %>
-    <div class="btn btn-warning">Add ingredient</div>
+    <div class="btn text_main">Add ingredient</div>
   <% end %>
 
 
