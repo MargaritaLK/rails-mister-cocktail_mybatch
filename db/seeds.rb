@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Ingredient.delete_all
+
+# Ingredient.create!(name: "lemon")
+# Ingredient.create!(name: "ice")
+# Ingredient.create!(name: "mint leaves")
+
+20.times do |x|
+  Ingredient.create!(name: Faker::Food.unique.fruits)
+end
+
+15.times do |x|
+  Ingredient.create!(name: "#{Faker::Cannabis.unique.strain}-liquor")
+end

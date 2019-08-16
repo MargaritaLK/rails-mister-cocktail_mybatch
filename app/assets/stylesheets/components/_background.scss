@@ -1,0 +1,13 @@
+
+.background {
+  background-color: #20292B;
+  background-image: asset-url("drinks.svg");
+  background-size: 200px 400px;
+  background-repeat: repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  min-height: 100vh;
+}

@@ -1,0 +1,17 @@
+ <!-- wil Post maken op cockltails/:id/doses -->
+
+ <!--  in simple form moet komen wat het bad moet zijn -->
+
+<div class="container">
+
+  <h2> Add ingredient</h2>
+  <div class="form">
+    <%= simple_form_for([@cocktail, @dose]) do |f| %>
+    <%= f.association :ingredient %>
+    <%= f.input :description  %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+</div>
+
