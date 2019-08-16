@@ -9,9 +9,7 @@ class DosesController < ApplicationController
   end
 
   def create
-    #doese
     @dose = Dose.new(doses_params)
-
     #cocktail_id --haal je uit de url (params)
     @cocktail = Cocktail.find(params[:cocktail_id])
     #decstiption --uit params
@@ -22,6 +20,14 @@ class DosesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @dose = Dose.find(params[:id])
+    @dose.destroy
+    redirect_to cocktail_path(@dose.cocktail)
+  end
+
 
   private
 

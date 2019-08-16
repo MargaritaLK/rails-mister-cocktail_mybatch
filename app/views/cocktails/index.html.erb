@@ -6,19 +6,15 @@
   <div class="cocktail-card-group">
     <% @cocktails.each do |c| %>
 
-      <div class="cocktail-card">
-        <h5 class="card-title"><%= c.name %></h5>
-        <p class="card-text"> <%= c.id %></p>
-        <%= link_to cocktail_path(c) do %>
-          <div class="btn btn-primary">Cocktail details</div>
-        <% end %>
-      </div>
+      <%= link_to cocktail_path(c) do %>
+        <h5 class="cocktail-card"><%= c.name %></h5>
+      <% end %>
 
     <% end %>
   </div>
 
   <%= link_to new_cocktail_path do %>
-    <div class="btn btn-primary">Make new cocktail</div>
+    <div class="btn btn-light">Make new cocktail</div>
   <% end %>
 
 </div>

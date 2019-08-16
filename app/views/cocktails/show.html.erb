@@ -6,13 +6,21 @@
   <h3> Whats in the cocktail? </h3>
 
   <%@doses.each do |d| %>
+
     <h4><%= d.ingredient.name %></h4>
     <p><%= d.description %></p>
+
+    <%= link_to cocktail_dose_path(d),
+    method: :delete, data: { confirm: "Are you sure?" } do %>
+      <div class="btn btn-warning">remove ingredient</div>
+    <% end %>
+
   <% end %>
 
   <%= link_to new_cocktail_dose_path(@cocktail) do %>
     <div class="btn btn-warning">Add ingredient</div>
   <% end %>
+
 
   <p> <%= link_to "Back to all cocktails", cocktails_path %></p>
 
