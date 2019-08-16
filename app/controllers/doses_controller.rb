@@ -5,15 +5,15 @@ class DosesController < ApplicationController
 
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
-    @dose = Dose.new #je wil een lege dose hebben, zodat simple form weet dat het nog geen id heeft
+    @dose = Dose.new # je wil een lege dose hebben, zodat simple form weet dat het nog geen id heeft
   end
 
   def create
     @dose = Dose.new(doses_params)
-    #cocktail_id --haal je uit de url (params)
+    # cocktail_id --haal je uit de url (params)
     @cocktail = Cocktail.find(params[:cocktail_id])
-    #decstiption --uit params
-    #ingredient ID
+    # decstiption --uit params
+    # ingredient ID
     @dose.cocktail = @cocktail
     if @dose.save
       redirect_to cocktail_path(@cocktail)
@@ -27,7 +27,6 @@ class DosesController < ApplicationController
     @dose.destroy
     redirect_to cocktail_path(@dose.cocktail)
   end
-
 
   private
 

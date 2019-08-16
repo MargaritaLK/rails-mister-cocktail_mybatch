@@ -1,7 +1,15 @@
 <div class="container">
 
-  <h1>All Cocktails</h1>
+  <h1 style="margin:5px;">create your cocktail....</h1>
 
+
+  <%= link_to new_cocktail_path do %>
+    <p class="new-cocktail"> <i class="fas fa-cocktail"></i></p>
+  <% end %>
+
+  <hr>
+
+  <h3 style="margin:5px;">or choose one of these...</h3>
 
   <div class="cocktail-card-group">
     <% @cocktails.each do |c| %>
@@ -13,8 +21,8 @@
     <% end %>
   </div>
 
-  <%= link_to new_cocktail_path do %>
-    <div class="btn btn-light">Make new cocktail</div>
-  <% end %>
+
 
 </div>
+
+

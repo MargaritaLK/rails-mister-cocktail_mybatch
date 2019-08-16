@@ -1,16 +1,18 @@
 .cocktail-card-group {
   display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
 
-}
+  .cocktail-card {
+    background-color: #EB3158;
+    margin: 5px;
+    width: 200px;
+    height: 75px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 25px;
 
-.cocktail-card {
-  background-color: #EB3158;
-  margin: 5px;
-  width: 200px;
-  height: 75px;
-  text-decoration: none;
-  color: white;
-  text-align: center;
-  padding: 25px;
+  }
 
 }
